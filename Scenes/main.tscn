@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://box8ribde5odl"]
+[gd_scene load_steps=2 format=3 uid="uid://box8ribde5odl"]
+
+[ext_resource type="PackedScene" uid="uid://p2mkyo2nand3" path="res://Models/balloon.tscn" id="1_ma3jx"]
 
 [node name="Main" type="Node3D"]
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.31322)
+projection = 1
+current = true
+size = 4.0
+
+[node name="Light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.510888, 0.473783, -0.717303, 0, 0.834415, 0.551136, 0.859647, -0.281569, 0.426293, 0, 2.3857, 0)
+
+[node name="Balloon" parent="." instance=ExtResource("1_ma3jx")]
+
+[node name="Balloon2" parent="." instance=ExtResource("1_ma3jx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40741, 0.912676, 0)
+
+[node name="Balloon3" parent="." instance=ExtResource("1_ma3jx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64989, -1.23268, 0)
+
+[node name="Balloon4" parent="." instance=ExtResource("1_ma3jx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57884, 0.586279, 0)
+
+[node name="Balloon5" parent="." instance=ExtResource("1_ma3jx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11412, -1.1779, 0)
