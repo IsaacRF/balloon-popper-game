@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://box8ribde5odl"]
+[gd_scene load_steps=3 format=3 uid="uid://box8ribde5odl"]
 
+[ext_resource type="Script" path="res://Scripts/score.gd" id="1_lp7te"]
 [ext_resource type="PackedScene" uid="uid://p2mkyo2nand3" path="res://Models/balloon.tscn" id="1_ma3jx"]
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_lp7te")
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.31322)
