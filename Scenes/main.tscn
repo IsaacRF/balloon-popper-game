@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://box8ribde5odl"]
+[gd_scene load_steps=4 format=3 uid="uid://box8ribde5odl"]
 
 [ext_resource type="Script" path="res://Scripts/score.gd" id="1_lp7te"]
 [ext_resource type="PackedScene" uid="uid://p2mkyo2nand3" path="res://Models/balloon.tscn" id="1_ma3jx"]
 
-[node name="Main" type="Node3D"]
+[sub_resource type="LabelSettings" id="LabelSettings_xghg7"]
+font_size = 51
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("score_text")]
 script = ExtResource("1_lp7te")
+score_text = NodePath("ScoreText")
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.31322)
@@ -16,6 +20,9 @@ size = 4.0
 transform = Transform3D(0.510888, 0.473783, -0.717303, 0, 0.834415, 0.551136, 0.859647, -0.281569, 0.426293, 0, 2.3857, 0)
 
 [node name="Balloon" parent="." instance=ExtResource("1_ma3jx")]
+clicks_to_pop = 5
+size_increase = 0.4
+score_value = 3
 
 [node name="Balloon2" parent="." instance=ExtResource("1_ma3jx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40741, 0.912676, 0)
@@ -28,3 +35,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57884, 0.586279, 0)
 
 [node name="Balloon5" parent="." instance=ExtResource("1_ma3jx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11412, -1.1779, 0)
+
+[node name="ScoreText" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 19.0
+offset_right = 278.0
+offset_bottom = 82.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_xghg7")

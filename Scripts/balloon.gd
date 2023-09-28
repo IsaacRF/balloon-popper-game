@@ -1,9 +1,9 @@
 extends Area3D
 
-var clicks_to_pop : int = 3
+@export var clicks_to_pop : int = 3
+@export var size_increase : float = 0.2
+@export var score_value : int = 1
 var clicks : int = 0
-var size_increase : float = 0.2
-var score_value : int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,4 +15,5 @@ func _on_input_event(camera, event, position, normal, shape_idx):
 		clicks += 1
 		
 		if clicks == clicks_to_pop:
+			get_node("/root/Main").increase_score(score_value)
 			queue_free()
